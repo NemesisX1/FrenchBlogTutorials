@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: const InputDecoration(
                   hintText: "Nom d'utilisateur",
                 ),
-                // Pour éviter que les gens soient vides
+                // Pour éviter que les champs soient vides
                 validator: (value) {
                   if (value!.isEmpty) return "Ce champs ne peut être vide";
                   return null;
