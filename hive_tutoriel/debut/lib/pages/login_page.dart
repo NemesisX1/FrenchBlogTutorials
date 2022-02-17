@@ -48,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: const InputDecoration(
                   hintText: "Mot de passe",
                 ),
+                obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) return "Ce champs ne peut être vide";
                   return null;

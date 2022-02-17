@@ -19,7 +19,17 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[],
+          children: <Widget>[
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Se déconnecter",
+              ),
+            )
+          ],
         ),
       ),
     );

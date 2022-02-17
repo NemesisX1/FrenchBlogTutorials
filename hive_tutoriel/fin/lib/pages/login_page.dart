@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_tutoriel/models/app_user.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -57,9 +59,22 @@ class _LoginPageState extends State<LoginPage> {
               const Gap(20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    fixedSize:
-                        Size.fromWidth(MediaQuery.of(context).size.width)),
-                onPressed: () {},
+                  fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                ),
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    AppUser user = AppUser(
+                      username: _usernameController.text,
+                      password: _passwordController.text,
+                    );
+                    Box<AppUser> box = Hive.box('user');
+                    if (box.isNotEmpty) {
+                      await box.putAt(0, user);
+                    } else {
+                      await box.add(user);
+                    }
+                  }
+                },
                 child: const Text(
                   "Enregister",
                 ),

@@ -14,12 +14,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Comprendre Hive"),
+        title: const Text("Acceuil"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[],
+          children: <Widget>[
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+              ),
+              onPressed: () {},
+              child: const Text(
+                "Se déconnecter",
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hive_tutoriel/pages/home_page.dart';
+import 'package:hive_tutoriel/models/app_user.dart';
 import 'package:hive_tutoriel/pages/login_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(AppUserAdapter());
+  await Hive.openBox<AppUser>("user");
+
   runApp(const App());
 }
 
