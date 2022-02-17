@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                 fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
               ),
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Se déconnecter",
               ),
             )

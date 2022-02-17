@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                       password: _passwordController.text,
                     );
                     Box<AppUser> box = Hive.box('user');
-                    if (box.isNotEmpty) {
+                    if (box.isEmpty) {
                       await box.putAt(0, user);
                     } else {
                       await box.add(user);
