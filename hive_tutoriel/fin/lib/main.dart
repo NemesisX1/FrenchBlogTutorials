@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_tutoriel/pages/home_page.dart';
+import 'package:hive_tutoriel/pages/login_page.dart';
 
 void main() {
   runApp(const App());
